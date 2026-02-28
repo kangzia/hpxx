@@ -3,100 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator with Particle Effects</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <title>Peaceful Immortal Helper</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #6e7bff, #8cb2ff);
+            background: linear-gradient(135deg, #f3f4f6, #e0e7ff);
+            font-family: Arial, sans-serif;
+            animation: backgroundAnimation 15s infinite alternate;
             overflow: hidden;
         }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .calculator {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        /* Glassmorphism effect styles */
+        .glass {
             backdrop-filter: blur(10px);
+            border-radius: 15px;
             padding: 20px;
-            display: inline-block;
-            animation: smoothEntrance 0.5s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
-        @keyframes smoothEntrance {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        /* Additional styles for buttons and layout */
-        button {
-            margin: 5px;
-            padding: 15px;
-            border-radius: 10px;
+        .button {
+            background-color: #4F46E5;
             border: none;
-            font-size: 20px;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background-color 0.3s ease;
         }
-        button:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .button:hover {
+            background-color: #4338CA;
         }
+        /* Additional styles here */
     </style>
 </head>
 <body>
-<div id="particles-js"></div>
-<div class="calculator">
-    <h1>Calculator</h1>
-    <input type="text" id="display" disabled>
-    <div>
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button onclick="appendToDisplay('/')">/</button>
-    </div>
-    <div>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button onclick="appendToDisplay('*')">*</button>
-    </div>
-    <div>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button onclick="appendToDisplay('-')">-</button>
-    </div>
-    <div>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="calculate()">=</button>
-        <button onclick="appendToDisplay('+')">+</button>
-    </div>
-</div>
-<script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
 
-    function clearDisplay() {
-        document.getElementById('display').value = '';
-    }
+    <header>
+        <h1>Peaceful Immortal Helper</h1>
+    </header>
 
-    function appendToDisplay(value) {
-        document.getElementById('display').value += value;
-    }
+    <main>
+        <section class="calculator" id="hanging-pool-calculator">
+            <h2>Hanging Pool Calculation</h2>
+            <form>
+                <!-- Form Controls for Hanging Pool Calculation -->
+                <input type="text" placeholder="Enter value..." required>
+                <button type="button" class="button" onclick="calculateHangingPool()">Calculate</button>
+            </form>
+            <div id="hangingPoolResult" class="result"></div>
+        </section>
 
-    function calculate() {
-        const display = document.getElementById('display');
-        display.value = eval(display.value);
-    }
-</script>
+        <section class="calculator" id="daily-bathing-calculator">
+            <h2>Daily 4h Bathing</h2>
+            <form>
+                <!-- Form Controls for Daily Bathing -->
+                <input type="text" placeholder="Enter value..." required>
+                <button type="button" class="button" onclick="calculateDailyBath()">Calculate</button>
+            </form>
+            <div id="dailyBathResult" class="result"></div>
+        </section>
+
+        <section class="calculator" id="wuji-pills-calculator">
+            <h2>Wu Ji Magic Pills Calculation</h2>
+            <form>
+                <!-- Form Controls for Wu Ji Pills -->
+                <input type="text" placeholder="Enter value..." required>
+                <button type="button" class="button" onclick="calculateWujiPills()">Calculate</button>
+            </form>
+            <div id="wujiPillsResult" class="result"></div>
+        </section>
+
+        <section class="calculator" id="reincarnation-treasure-calculator">
+            <h2>Reincarnation Treasure Calculation</h2>
+            <form>
+                <!-- Form Controls for Reincarnation Treasure -->
+                <input type="text" placeholder="Enter value..." required>
+                <button type="button" class="button" onclick="calculateReincarnationTreasure()">Calculate</button>
+            </form>
+            <div id="reincarnationTreasureResult" class="result"></div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript -->
+    <script>
+        // Insert calculation logic functions here
+        function calculateHangingPool() {
+            // Logic for Hanging Pool Calculation
+        }
+
+        function calculateDailyBath() {
+            // Logic for Daily Bathing Calculation
+        }
+
+        function calculateWujiPills() {
+            // Logic for Wu Ji Magic Pills Calculation
+        }
+
+        function calculateReincarnationTreasure() {
+            // Logic for Reincarnation Treasure Calculation
+        }
+    </script>
 </body>
 </html>
